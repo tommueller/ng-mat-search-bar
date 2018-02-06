@@ -1,9 +1,23 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 @Component({
   selector: 'mat-search-bar',
   templateUrl: './mat-search-bar.component.html',
-  styleUrls: ['./mat-search-bar.component.scss']
+  styleUrls: ['./mat-search-bar.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      state('true', style({ width: '*' })),
+      state('false', style({ width: '0' })),
+      transition('true => false', animate('300ms ease-in')),
+      transition('false => true', animate('300ms ease-out'))
+    ])
+  ]
 })
 export class MatSearchBarComponent {
 

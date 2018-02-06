@@ -10,15 +10,9 @@
 
 .mat-search_field {
     position: absolute;
-    transform: scaleX(0);
-    transform-origin: 100% 100%;
-    transition: transform 0.3s;
     background: #FFF;
     z-index: 1;
-    margin-top: 6px;
-    &.mat-search_field--visible {
-        transform: scaleX(1);
-    }
+    padding: 0 24px 0;
 }
 
 .mat-search_icon {
