@@ -1,15 +1,7 @@
 <mat-form-field class="mat-search_field" [@slideInOut]="searchVisible">
-    <input 
-    #input 
-    matInput 
-    type="text" 
-    placeholder="" 
-    (blur)="onBlurring(input.value)"
-    (keyup.enter)="onEnterring(input.value)"
-    (focus)="onFocussing(input.value)" 
-    />
+    <input #input matInput type="text" placeholder="" (blur)="onBlurring(input.value)" (keyup.enter)="onEnterring(input.value)" (focus)="onFocussing(input.value)" />
 </mat-form-field>
-<span class="mat-search_icon" [class.mat-search_icon--active]="searchVisible">
-  <mat-icon class="mat-search_icon--close" (click)="input.value = ''; searchVisible = false; onClosing();">close</mat-icon>
-  <mat-icon class="mat-search_icon--search" (click)="searchVisible=true; input.focus();">search</mat-icon>
+<span class="mat-search_icons" [class.mat-search_icons--active]="searchVisible">
+  <mat-icon class="mat-search_icon-close" (click)="input.value = ''; searchVisible = false; onClosing(); " matRipple>close</mat-icon>
+  <mat-icon class="mat-search_icon-search" (click)="searchVisible=true; input.focus();" matRipple>search</mat-icon>
 </span>

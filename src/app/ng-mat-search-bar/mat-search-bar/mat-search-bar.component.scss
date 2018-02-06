@@ -15,7 +15,7 @@
     padding: 0 24px 0 0;
 }
 
-.mat-search_icon {
+.mat-search_icons {
     display: block;
     margin: 0;
     padding: 0;
@@ -25,8 +25,8 @@
     &:hover {
         cursor: pointer;
     }
-    .mat-search_icon--close,
-    .mat-search_icon--search {
+    .mat-search_icon-close,
+    .mat-search_icon-search {
         transition: all .2s cubic-bezier(.4, 0, .2, 1);
         position: absolute;
         top: 0;
@@ -35,12 +35,12 @@
         background: #FFF;
         border-radius: 50%;
     }
-    .mat-search_icon--close,
-    &.mat-search_icon--active .mat-search_icon--search {
+    .mat-search_icon-close,
+    &.mat-search_icons--active .mat-search_icon-search {
         opacity: 0;
         transform: rotate(225deg);
     }
-    &.mat-search_icon--active .mat-search_icon--close {
+    &.mat-search_icons--active .mat-search_icon-close {
         opacity: 1;
         z-index: 3;
         visibility: visible;
