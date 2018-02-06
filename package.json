@@ -1,6 +1,6 @@
 {
   "name": "ng-mat-search-bar",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"
