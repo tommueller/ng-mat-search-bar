@@ -1,27 +1,62 @@
 # NgMatSearchBar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+The component creates a search-icon which expands a search-field on click. See the demo for the effect:
+![NgMatSearchBar demo](https://raw.githubusercontent.com/tommueller/ng-mat-search-bar/master/docs/demo.gif)
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install the dependency via npm:
 
-## Code scaffolding
+```bash
+npm install ng-mat-search-bar --save
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+or yarn
 
-## Build
+```bash
+yarn add ng-mat-search-bar
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+and import the module into your apps _app.module.ts_ like this:
 
-## Running unit tests
+```typescript
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+...
 
-## Running end-to-end tests
+@NgModule({
+  ...,
+  imports: [
+    ...,
+    NgMatSearchBarModule
+  ],
+  ...
+})
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+and you also need to add Material Icons webfont by adding
 
-## Further help
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+to your _index.html_.
+
+## Usage
+
+You can use the component with its selector:
+
+```angular
+<mat-search-bar></mat-search-bar>
+```
+
+and then subscribe to the different events it is outputting:
+
+- **onBlur**: fired when the search-field looses focus
+- **onClose**: fired when the user closes the searchfield by clicking the close-button
+- **onEnter**: fired when user presses enter-button in search-field
+- **onFocus**: fired when user focuses the search-field
+
+## Contributions
+
+Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.
