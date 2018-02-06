@@ -1,11 +1,6 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Output } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+
 @Component({
   selector: 'mat-search-bar',
   templateUrl: './mat-search-bar.component.html',
