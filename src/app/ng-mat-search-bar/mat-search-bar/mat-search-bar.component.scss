@@ -1,0 +1,54 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 24px;
+    height: 24px;
+}
+
+.mat-search_field {
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: 100% 100%;
+    transition: transform 0.3s;
+    background: #FFF;
+    z-index: 1;
+    margin-top: 6px;
+    &.mat-search_field--visible {
+        transform: scaleX(1);
+    }
+}
+
+.mat-search_icon {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:hover {
+        cursor: pointer;
+    }
+    .mat-search_icon--close,
+    .mat-search_icon--search {
+        transition: all .2s cubic-bezier(.4, 0, .2, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: #FFF;
+    }
+    .mat-search_icon--close,
+    &.mat-search_icon--active .mat-search_icon--search {
+        opacity: 0;
+        transform: rotate(225deg);
+    }
+    &.mat-search_icon--active .mat-search_icon--close {
+        opacity: 1;
+        z-index: 3;
+        visibility: visible;
+        transform: rotate(360deg);
+    }
+}
