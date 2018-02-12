@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'mat-search-bar',
@@ -16,12 +16,27 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class MatSearchBarComponent {
 
+  @ViewChild('input') inputElement: ElementRef;
+
   @Output() onBlur = new EventEmitter<string>();
   @Output() onClose = new EventEmitter<void>();
   @Output() onEnter = new EventEmitter<string>();
   @Output() onFocus = new EventEmitter<string>();
+  @Output() onOpen = new EventEmitter<void>();
 
   searchVisible = false;
+
+  public close(): void {
+    this.searchVisible = false;
+    this.inputElement.nativeElement.value = '';
+    this.onClose.emit();
+  }
+
+  public open(): void {
+    this.searchVisible = true;
+    this.inputElement.nativeElement.focus();
+    this.onOpen.emit();
+  }
 
   onBlurring(searchValue: string) {
     if (!searchValue) {
@@ -37,9 +52,4 @@ export class MatSearchBarComponent {
   onFocussing(searchValue: string) {
     this.onFocus.emit(searchValue);
   }
-
-  onClosing() {
-    this.onClose.emit();
-  }
-
 }
