@@ -56,6 +56,12 @@ and then subscribe to the different events it is outputting:
 - **onClose**: fired when the user closes the searchfield by clicking the close-button
 - **onEnter**: fired when user presses enter-button in search-field
 - **onFocus**: fired when user focuses the search-field
+- **onOpen**: fired when the searchbar is shown
+
+it also offers two public methods to open / close the searchbar:
+
+- **open()**: opens the searchbar
+- **close()**: closes the searchbar
 
 ## Contributions
 
