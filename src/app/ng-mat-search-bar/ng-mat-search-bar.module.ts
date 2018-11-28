@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatIconModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import {
+  MatIconModule,
+  MatInputModule,
+  MatRippleModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSearchBarComponent } from './mat-search-bar/mat-search-bar.component';
@@ -15,11 +19,7 @@ import { MatSearchBarComponent } from './mat-search-bar/mat-search-bar.component
     MatInputModule,
     MatRippleModule
   ],
-  exports: [
-    MatSearchBarComponent
-  ],
-  declarations: [
-    MatSearchBarComponent
-  ]
+  exports: [MatSearchBarComponent],
+  declarations: [MatSearchBarComponent]
 })
-export class NgMatSearchBarModule { }
+export class NgMatSearchBarModule {}

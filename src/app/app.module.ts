@@ -6,11 +6,9 @@ import { AppComponent } from './app.component';
 import { NgMatSearchBarModule } from './ng-mat-search-bar/ng-mat-search-bar.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [BrowserModule, FormsModule, NgMatSearchBarModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
