@@ -1,5 +1,21 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from '@angular/animations';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  forwardRef,
+  Output,
+  ViewChild
+} from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+
+import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
 
 @Component({
   selector: 'mat-search-bar',
@@ -12,10 +28,18 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
       transition('true => false', animate('300ms ease-in')),
       transition('false => true', animate('300ms ease-out'))
     ])
+  ],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => MatSearchBarComponent),
+      multi: true
+    }
   ]
 })
-export class MatSearchBarComponent {
-
+export class MatSearchBarComponent extends AbstractControlValueAccessor<
+  string
+> {
   @ViewChild('input') inputElement: ElementRef;
 
   @Output() onBlur = new EventEmitter<string>();
@@ -28,7 +52,8 @@ export class MatSearchBarComponent {
 
   public close(): void {
     this.searchVisible = false;
-    this.inputElement.nativeElement.value = '';
+    this.value = '';
+    this.updateChanges();
     this.onClose.emit();
   }
 

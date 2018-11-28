@@ -1,5 +1,5 @@
 <mat-form-field class="mat-search_field" [@slideInOut]="searchVisible">
-    <input #input matInput type="text" placeholder="" (blur)="onBlurring(input.value)" (keyup.enter)="onEnterring(input.value)" (focus)="onFocussing(input.value)" />
+    <input #input matInput type="text" placeholder="" [(ngModel)]="value" (ngModelChange)="updateChanges()" (blur)="onBlurring(input.value)" (keyup.enter)="onEnterring(input.value)" (focus)="onFocussing(input.value)" />
 </mat-form-field>
 <span class="mat-search_icons" [class.mat-search_icons--active]="searchVisible">
   <mat-icon class="mat-search_icon-close" (click)="close()" matRipple>close</mat-icon>
