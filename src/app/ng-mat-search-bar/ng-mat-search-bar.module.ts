@@ -6,13 +6,11 @@ import {
   MatInputModule,
   MatRippleModule
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSearchBarComponent } from './mat-search-bar/mat-search-bar.component';
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
     MatIconModule,

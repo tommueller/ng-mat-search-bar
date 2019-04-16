@@ -34,7 +34,9 @@ import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 })
 ```
 
-and you also need to add Material Icons webfont by adding
+Also make sure that in your _app.module.ts_ you import the `BrowserAnimationsModule`, otherwise the animations will not work!
+
+You also need to add Material Icons webfont by adding
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
