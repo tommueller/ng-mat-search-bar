@@ -68,6 +68,22 @@ it also offers two public methods to open / close the searchbar:
 and a property:
 - **searchVisible**: which holds the current visibility state of the search-input
 
+also, you can use it with ReactiveFormsModule, by passing a `FormControl` as input: e.g
+
+```html
+...
+<mat-search-bar [formControl]="control" ></mat-search-bar>
+...
+```
+and in .ts file: 
+
+```typescript
+  ...@Component({})...
+    control: FormControl = new FormControl('');
+  ...
+```
+
+
 ## Contributions
 
 Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.

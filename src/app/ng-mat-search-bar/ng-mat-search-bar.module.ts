@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatIconModule,
   MatInputModule,
@@ -15,9 +15,12 @@ import { MatSearchBarComponent } from './mat-search-bar/mat-search-bar.component
     FormsModule,
     MatIconModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+
+    //Reactive form
+    ReactiveFormsModule
   ],
   exports: [MatSearchBarComponent],
   declarations: [MatSearchBarComponent]
 })
-export class NgMatSearchBarModule {}
+export class NgMatSearchBarModule { }

@@ -3,3 +3,9 @@
   <mat-search-bar [(ngModel)]="searchValue"></mat-search-bar>
   <p>{{ searchValue }}</p>
 </div>
+
+<h1>Reactive form Test Page</h1>
+<div style="position: absolute; top: 60%; left: 50%; height: 50px; width: 50%;">
+  <mat-search-bar [formControl]="control"></mat-search-bar>
+  <p>{{ control.value }}</p>
+</div>
