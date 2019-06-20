@@ -65,6 +65,9 @@ it also offers two public methods to open / close the searchbar:
 - **open()**: opens the searchbar
 - **close()**: closes the searchbar
 
+and a property:
+- **searchVisible**: which holds the current visibility state of the search-input
+
 ## Contributions
 
 Please don't hesitate to file an issue or send in a PR if you have any improvements or found bugs.
