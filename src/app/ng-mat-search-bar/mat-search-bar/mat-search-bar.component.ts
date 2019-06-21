@@ -11,9 +11,11 @@ import {
   EventEmitter,
   forwardRef,
   Output,
-  ViewChild
+  ViewChild,
+  Input,
+  OnInit
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, FormGroup, FormControl } from '@angular/forms';
 
 import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
 
@@ -38,9 +40,11 @@ import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
   ]
 })
 export class MatSearchBarComponent extends AbstractControlValueAccessor<
-  string
+string
 > {
   @ViewChild('input') inputElement: ElementRef;
+
+  @Input() formControl: FormControl;
 
   @Output() onBlur = new EventEmitter<string>();
   @Output() onClose = new EventEmitter<void>();
@@ -64,7 +68,7 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<
   }
 
   onBlurring(searchValue: string) {
-    if (!searchValue) {
+    if(!searchValue) {
       this.searchVisible = false;
     }
     this.onBlur.emit(searchValue);
