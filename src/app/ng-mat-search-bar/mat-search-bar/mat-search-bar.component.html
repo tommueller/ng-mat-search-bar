@@ -4,7 +4,7 @@
 </mat-form-field>
 
 <!-- FORM CONTROL WAY -->
-<mat-form-field class="mat-search_field" [@slideInOut]="searchVisible">
+<mat-form-field *ngIf="formControl" class="mat-search_field" [@slideInOut]="searchVisible">
   <input #input matInput type="text" placeholder="" [formControl]="formControl" (blur)="onBlurring(input.value)"
     (keyup.enter)="onEnterring(input.value)" (focus)="onFocussing(input.value)" />
 </mat-form-field>
