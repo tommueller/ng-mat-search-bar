@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatIconModule,
-  MatInputModule,
-  MatRippleModule
-} from '@angular/material';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 import { MatSearchBarComponent } from './mat-search-bar/mat-search-bar.component';
 
