@@ -42,7 +42,7 @@ import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
 export class MatSearchBarComponent extends AbstractControlValueAccessor<
 string
 > {
-  @ViewChild('input') inputElement: ElementRef;
+  @ViewChild('input', { static: false }) inputElement: ElementRef;
 
   @Input() formControl: FormControl;
 
