@@ -45,6 +45,7 @@ string
   @ViewChild('input', { static: false }) inputElement: ElementRef;
 
   @Input() formControl: FormControl;
+  @Input() placeholder = '';
 
   @Output() onBlur = new EventEmitter<string>();
   @Output() onClose = new EventEmitter<void>();
