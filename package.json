@@ -11,6 +11,10 @@
     "start": "ng serve",
     "test": "ng test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tommueller/ng-mat-search-bar.git"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.4",
     "@angular-devkit/core": "^8.3.4",
