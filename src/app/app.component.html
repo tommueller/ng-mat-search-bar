@@ -1,11 +1,44 @@
 <h1>Test Page</h1>
-<div style="position: absolute; top: 50%; left: 50%; height: 50px; width: 50%;">
-  <mat-search-bar [(ngModel)]="searchValue"></mat-search-bar>
-  <p>{{ searchValue }}</p>
-</div>
 
-<h1>Reactive form Test Page</h1>
-<div style="position: absolute; top: 60%; left: 50%; height: 50px; width: 50%;">
-  <mat-search-bar [formControl]="control" [placeholder]="'custom placeholder'"></mat-search-bar>
-  <p>{{ control.value }}</p>
+<div style="position: absolute; right: 0;">
+  <h2>Simple Mode</h2>
+  <mat-search-bar [(ngModel)]="searchValue1"></mat-search-bar>
+  <p>{{ searchValue1 }}</p>
+
+  <h2>Simple Mode with Autocomplete</h2>
+  <mat-search-bar
+    [(ngModel)]="searchValue2"
+    [matAutocomplete]="simpleAuto"
+  ></mat-search-bar>
+
+  <mat-autocomplete #simpleAuto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <p>{{ searchValue2 }}</p>
+
+  <h2>Reactive form Test Page</h2>
+  <mat-search-bar
+    [formControl]="control1"
+    [placeholder]="'custom placeholder'"
+  ></mat-search-bar>
+
+  <p>{{ control1.value }}</p>
+
+  <h2>Reactive form with autocomplete Test Page</h2>
+  <mat-search-bar
+    [formControl]="control2"
+    [placeholder]="'custom placeholder'"
+    [matAutocomplete]="auto"
+  ></mat-search-bar>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <p>{{ control2.value }}</p>
 </div>

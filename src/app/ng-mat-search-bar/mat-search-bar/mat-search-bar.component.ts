@@ -10,14 +10,22 @@ import {
   ElementRef,
   EventEmitter,
   forwardRef,
-  Output,
-  ViewChild,
   Input,
-  OnInit
+  OnInit,
+  Output,
+  ViewChild
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR, FormGroup, FormControl } from '@angular/forms';
+import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MatAutocomplete } from '@angular/material/autocomplete';
 
 import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
+
+export enum DISPLAY_TYPE {
+  SIMPLE,
+  FORMCONTROL,
+  AUTOCOMPLETE,
+  FORMCONTROLANDAUTOCOMPLETE
+}
 
 @Component({
   selector: 'mat-search-bar',
@@ -39,12 +47,14 @@ import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
     }
   ]
 })
-export class MatSearchBarComponent extends AbstractControlValueAccessor<
-string
-> {
+export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
+  implements OnInit {
+  DISPLAY_TYPE = DISPLAY_TYPE;
+
   @ViewChild('input', { static: false }) inputElement: ElementRef;
 
   @Input() formControl: FormControl;
+  @Input() matAutocomplete: MatAutocomplete;
   @Input() placeholder = '';
 
   @Output() onBlur = new EventEmitter<string>();
@@ -53,7 +63,17 @@ string
   @Output() onFocus = new EventEmitter<string>();
   @Output() onOpen = new EventEmitter<void>();
 
+  mode: DISPLAY_TYPE;
   searchVisible = false;
+
+  ngOnInit() {
+    if (!this.formControl && !this.matAutocomplete)
+      this.mode = DISPLAY_TYPE.SIMPLE;
+    else if (this.formControl && this.matAutocomplete)
+      this.mode = DISPLAY_TYPE.FORMCONTROLANDAUTOCOMPLETE;
+    else if (this.formControl) this.mode = DISPLAY_TYPE.FORMCONTROL;
+    else if (this.matAutocomplete) this.mode = DISPLAY_TYPE.AUTOCOMPLETE;
+  }
 
   public close(): void {
     this.searchVisible = false;
@@ -69,7 +89,7 @@ string
   }
 
   onBlurring(searchValue: string) {
-    if(!searchValue) {
+    if (!searchValue) {
       this.searchVisible = false;
     }
     this.onBlur.emit(searchValue);

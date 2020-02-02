@@ -7,8 +7,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  searchValue = '';
+  searchValue1 = '';
+  searchValue2 = '';
 
-  control = new FormControl('', Validators.required);
+  control1 = new FormControl('', Validators.required);
+  control2 = new FormControl('', Validators.required);
 
+  options: string[] = ['One', 'Two', 'Three'];
 }
