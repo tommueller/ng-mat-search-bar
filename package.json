@@ -31,8 +31,8 @@
     "@angular/platform-browser-dynamic": "^9.0.1",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~12.7.5",
-    "codelyzer": "^5.0.1",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
     "core-js": "^3.6.1",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -42,11 +42,10 @@
     "karma-coverage-istanbul-reporter": "^2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "ng-packagr": "^9.0.1",
+    "ng-packagr": "^9.0.0",
     "protractor": "~5.4.2",
     "rxjs": "^6.3.3",
     "ts-node": "~8.3.0",
-    "tslib": "^1.10.0",
     "tslint": "~5.20.0",
     "typescript": "~3.7.5",
     "zone.js": "~0.10.2"
@@ -59,5 +58,7 @@
       "entryFile": "public_api.ts"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
 }
