@@ -20,14 +20,14 @@
     "@angular-devkit/build-angular": "~0.900.2",
     "@angular-devkit/core": "^9.0.2",
     "@angular/animations": "^9.0.1",
-    "@angular/cdk": "^8.2.0",
+    "@angular/cdk": "^9.0.0",
     "@angular/cli": "^9.0.2",
     "@angular/common": "^9.0.1",
     "@angular/compiler": "^9.0.1",
     "@angular/compiler-cli": "^9.0.1",
     "@angular/core": "^9.0.1",
     "@angular/forms": "^9.0.1",
-    "@angular/material": "^8.2.0",
+    "@angular/material": "^9.0.0",
     "@angular/platform-browser": "^9.0.1",
     "@angular/platform-browser-dynamic": "^9.0.1",
     "@types/jasmine": "~3.4.0",
@@ -51,9 +51,7 @@
     "typescript": "~3.7.5",
     "zone.js": "~0.10.2"
   },
-  "peerDependencies": {
-    "@angular/material": "^8.0.0"
-  },
+  "peerDependencies": {},
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"
