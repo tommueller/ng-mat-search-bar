@@ -51,7 +51,7 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
   implements OnInit {
   DISPLAY_TYPE = DISPLAY_TYPE;
 
-  @ViewChild('input', { static: false }) inputElement: ElementRef;
+  @ViewChild('input') inputElement: ElementRef;
 
   @Input() formControl: FormControl;
   @Input() matAutocomplete: MatAutocomplete;
