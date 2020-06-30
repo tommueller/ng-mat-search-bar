@@ -51,7 +51,12 @@
     "typescript": "~3.9.5",
     "zone.js": "~0.10.2"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/animations": "^10.0.2",
+    "@angular/core": "^10.0.0",
+    "@angular/forms": "^10.0.2",
+    "@angular/material": "^10.0.1"
+  },
   "ngPackage": {
     "lib": {
       "entryFile": "public_api.ts"
