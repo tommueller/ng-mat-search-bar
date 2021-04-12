@@ -3,6 +3,7 @@
     *ngSwitchCase="DISPLAY_TYPE.AUTOCOMPLETE"
     class="mat-search_field"
     [@slideInOut]="searchVisible"
+    [appearance]="appearance"
   >
     <input
       #input
@@ -22,6 +23,7 @@
     *ngSwitchCase="DISPLAY_TYPE.FORMCONTROL"
     class="mat-search_field"
     [@slideInOut]="searchVisible"
+    [appearance]="appearance"
   >
     <input
       #input
@@ -39,6 +41,7 @@
     *ngSwitchCase="DISPLAY_TYPE.FORMCONTROLANDAUTOCOMPLETE"
     class="mat-search_field"
     [@slideInOut]="searchVisible"
+    [appearance]="appearance"
   >
     <input
       #input
@@ -57,6 +60,7 @@
     *ngSwitchDefault
     class="mat-search_field"
     [@slideInOut]="searchVisible"
+    [appearance]="appearance"
   >
     <input
       #input

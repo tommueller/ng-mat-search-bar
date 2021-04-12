@@ -17,7 +17,6 @@ import {
 } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatAutocomplete } from '@angular/material/autocomplete';
-
 import { AbstractControlValueAccessor } from '../util/abstract-value-accessor';
 
 export enum DISPLAY_TYPE {
@@ -55,6 +54,7 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
 
   @Input() formControl: FormControl;
   @Input() matAutocomplete: MatAutocomplete;
+  @Input() appearance: string = 'standard';
   @Input() placeholder = '';
 
   @Output() onBlur = new EventEmitter<string>();
