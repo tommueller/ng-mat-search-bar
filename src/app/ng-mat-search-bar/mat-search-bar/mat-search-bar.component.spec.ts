@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MatSearchBarComponent } from './mat-search-bar.component';
 
@@ -6,7 +6,7 @@ describe('MatSearchBarComponent', () => {
   let component: MatSearchBarComponent;
   let fixture: ComponentFixture<MatSearchBarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MatSearchBarComponent ]
     })
