@@ -1,6 +1,6 @@
 {
   "name": "ng-mat-search-bar",
-  "version": "11.0.0-beta.1",
+  "version": "11.1.0",
   "license": "MIT",
   "scripts": {
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points --tsconfig tsconfing.base.json",
