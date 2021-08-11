@@ -56,7 +56,7 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
   @Input() matAutocomplete: MatAutocomplete;
   @Input() appearance: string = 'standard';
   @Input() placeholder = '';
-
+  @Input() alwaysOpen: boolean = false;
   @Output() onBlur = new EventEmitter<string>();
   @Output() onClose = new EventEmitter<void>();
   @Output() onEnter = new EventEmitter<string>();
@@ -73,10 +73,16 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
       this.mode = DISPLAY_TYPE.FORMCONTROLANDAUTOCOMPLETE;
     else if (this.formControl) this.mode = DISPLAY_TYPE.FORMCONTROL;
     else if (this.matAutocomplete) this.mode = DISPLAY_TYPE.AUTOCOMPLETE;
+
+    if (this.alwaysOpen) {
+        this.searchVisible = true;
+    }
   }
 
   public close(): void {
-    this.searchVisible = false;
+    if (!this.alwaysOpen) {
+      this.searchVisible = false;
+    }
     this.value = '';
     this.updateChanges();
     this.onClose.emit();
@@ -89,7 +95,7 @@ export class MatSearchBarComponent extends AbstractControlValueAccessor<string>
   }
 
   onBlurring(searchValue: string) {
-    if (!searchValue) {
+    if (!searchValue && !this.alwaysOpen) {
       this.searchVisible = false;
     }
     this.onBlur.emit(searchValue);
